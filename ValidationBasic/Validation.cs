@@ -11,7 +11,7 @@ namespace ValidationBasic
 {
     public class Validation
     {
-        // Método que testa se o CNPJ é Válido
+        // Método que válida se o CNPJ é Válido
         public static bool IsCnpj(string cnpj)
         {
             int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -76,7 +76,7 @@ namespace ValidationBasic
             return cnpj.EndsWith(digito);           // Testa se o CPF terminia com o DIGITO VERIFICADOR
         }
 
-        // Testa se é um CPF válido
+        // Método que válida se o CPF é Válido
         public static bool IsCpf(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -137,6 +137,19 @@ namespace ValidationBasic
 
             digito = digito + resto.ToString();
             return cpf.EndsWith(digito);      // Testa se o CPF terminia com o DIGITO VERIFICADOR
+        }
+
+        // Método que válida se o EMAIL é válido
+        public static bool IsEmail(string email)
+        {
+            for (int x= 0; x <= email.Length; x++)
+            {
+                if (email.Substring(x,(x+1)) == "@")
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
