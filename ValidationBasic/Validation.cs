@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/* ValidationBasic V 2.0 - 16/09/2017
- * Acrescentado método de verificação CNPJ  
- * Aperfeiçoamento de código
-*/
+
 namespace ValidationBasic
 {
     public class Validation
