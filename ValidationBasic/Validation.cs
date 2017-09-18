@@ -142,14 +142,19 @@ namespace ValidationBasic
         // Método que válida se o EMAIL é válido
         public static bool IsEmail(string email)
         {
-            for (int x= 0; x <= email.Length; x++)
+            email = email.Trim();
+
+            if (email.Substring(0, 1) == "@" || email.Count() < 5)
             {
-                if (email.Substring(x,(x+1)) == "@")
-                {
-                    return true;
-                }
+                return false;
+            }
+            else if (email.Contains("@"))
+            {
+                return true;
             }
             return false;
         }
+
     }
 }
+
